@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path, { dirname } from "path";
-import runtimeErrorOverlay from "@/vite-plugin-runtime-error-modal";
 import { fileURLToPath } from "url";
 import glsl from "vite-plugin-glsl";
 
@@ -9,11 +8,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-  // Base path for GitHub Pages
-  base: process.env.VITE_BASE || "/tankrev/",
   plugins: [
     react(),
-    runtimeErrorOverlay(),
+    
     glsl(), // Add GLSL shader support
   ],
   resolve: {
